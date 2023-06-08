@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root{
+    /* --primary-color:#17181a; */
+    --primary-color: #202020;
+    --secondary-color: #202020;
+    --third-color: #424242;
+}
+
+body{
+    width: 100%;
+    background-color: var(--primary-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.DeBody-hu-DeBody{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+#header{
+    top: -10px;
+    width: 100%;
+    position: fixed;
+    padding:1rem;
+    display:flex;
+    z-index: 1;
+    height: 72px;
+}
+
+.D_film{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    background-size: cover;
+    padding: 1rem;
+    color: white;
+    left: 6%;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.vertical-bar{
+    width: 0.1px;
+    opacity: 0.2;
+    height: 40%;
+    position: absolute;
+    background-color: white;
+    margin: 0 1rem;
+    left: 13%;
+    top: 35%;
+}
+
+.D_position{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    background-size: cover;
+    padding: 1rem;
+    color: white;
+    left: 14.5%;
+    font-size: 1rem;
+    font-weight: 10;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+}
+
+.De-BOOddy form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-size: cover;
+    margin-top: 0.4rem;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.search{
+    background-color: var(--secondary-color);
+    opacity: 0.6;
+    border: 2px solid var(--primary-color);
+    padding:0.5rem 1rem;
+    font-size: 1rem;
+    color:rgb(195, 187, 187);
+    font-family: inherit;
+    text-align: center;
+    width: 40%;
+}
+
+.search:focus{
+    outline:0; 
+    background-color: var(--primary-color);
+    color:rgb(195, 187, 187);
+}
+
+.search::placeholder{
+    color: #7378c5;
+}
+
+.genreTitle{
+    font-size: 1.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: rgb(255, 255, 255);
+    margin-bottom: 1rem;
+}
+
+.Blur-separator{
+    justify-self: left;
+    display: flex;
+    position: absolute;
+    top: 93.1%;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(0deg, rgba(32,32,32,1) 0%, rgba(32,32,32,0.8) 20%, rgba(32,32,32,0.6) 40%, rgba(32,32,32,0.4) 60%, rgba(32,32,32,0.19961488013174022) 80%, rgba(32,32,32,0) 100%);
+}
+
+
+.movie-container{
+    margin-top: 3%;
+    padding: 1rem;
+}
+.movie-container > .row{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+.row{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:-15px;
+    margin-left:-15px;
+}
+
+.movie {
+    margin:1rem!important;
+    width: 300px;    
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    background-color: var(--third-color);
+    position:relative;
+}
+
+.movie img{
+    width:300px;
+}
+
+.movie-info{
+    color:#eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color:lightgreen;
+}
+
+.movie-info span.orange{
+    color:orange;
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: #fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform:translateY(115%);
+    transition:transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform:translateY(0)
+}
+
+.movie-container > .row::-webkit-scrollbar {
+    /* display: none; */
+    color: white;
+    background-color: var(--primary-color);
+  }
+
+/* Track */
+.movie-container > .row::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white; 
+    border-radius: 10px;
+  }
+   
+.movie-container > .row::-webkit-scrollbar-thumb {
+    background: rgba(66,66,66,0.5); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+.movie-container > .row::-webkit-scrollbar-thumb:hover {
+    background: rgba(66,66,66,1); 
+  }
+
+#tags{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.tag{
+    color:white;
+    padding:10px 20px;
+    background-color: orange;
+    border-radius: 50px;
+    margin:5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+.tag.highlight{
+    background-color: red;
+}
+.no-results{
+    color:white;
+}
+
+.pagination{
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+.page.disabled{
+    cursor:not-allowed;
+    color:grey;
+}
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid orange;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.know-more{
+    background-color: orange;
+    color:white;
+    font-size: 16px;
+    font-weight: bold;
+    border:0;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .vertical-bar {
+      display: none;
+    }
+    .D_position {
+      display: none;
+    }
+  }
+
+
+  .embed.hide{
+      display: none;
+  }
+
+  .embed.show{
+      display: inline-block;
+  }
+
+  .arrow{
+      position: absolute;
+      font-size: 40px;
+  }
+
+  .arrow.left-arrow{
+      top:50%;
+      left:5%;
+      transform: translateY(-50%);
+  }
+
+  
+  .arrow.right-arrow{
+    top:50%;
+    transform: translateY(-50%);
+    right:5%;
+}
+
+.dots{
+    margin-top: 30px;
+}
+
+.dots .dot {
+    padding: 5px 15px;
+    border-radius: 50%;
+    border: 5px solid var(--secondary-color);
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.dots .dot.active{
+    border-color: orange;
+}
+
+.overflowSlide {
+    background-color: #333;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  
+.overflowSlide {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+.overflowSlide {
+    background-color: #777;
+  }
+
+.container-fluid{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    -ms-flex-align:center;
+    align-items:center;
+    -ms-flex-pack:justify;
+    justify-content:space-between
+}
+
+@media (max-width:575.98px){.container-fluid{padding-right:0;padding-left:0}}
+
+.fade-background{
+    background-color: #060606;
+    background-color: rgba(06, 06, 06, 0.90);
+    -webkit-transition: background-color 0.5s ;
+    transition: background-color 0.5s ;
+}
+
+.fade-transparent{
+    background-color: transparent;
+
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+
+.bottom-space{
+    margin-bottom: 20px;
+    height: 30px;
+}
